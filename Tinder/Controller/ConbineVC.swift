@@ -26,8 +26,8 @@ extension CombineVC {
       
         for item in 1...3 {
             
-            let redView = UIView()
-            redView.backgroundColor = item == 2 ? .blue : .red                  //cor da redview
+            let redView = CombineCardView()
+      
             redView.frame = CGRect(x: 0, y: 0, width: view.bounds.width - 33, height: view.bounds.height * 0.77) //transformando a redView em retangulo
                 redView.center = view.center                    //centralizaçao
                 
@@ -47,7 +47,7 @@ extension CombineVC {
             let point = gesture.translation(in: view)
             card.center = CGPoint (x: view.center.x + point.x, y: view.center.y + point.y)
             
-            let rotationAngle = point.x / view.bounds.width * 0.3
+            let rotationAngle = point.x / view.bounds.width * 0.3       //rotação da animação usando o eixo x 
             
             card.transform = CGAffineTransform(rotationAngle: rotationAngle)
             if gesture.state == .ended {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C9722C9277420BB0034D489 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9722C8277420BB0034D489 /* UILabel.swift */; };
 		5CB2F63A27739AD1008CE159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63927739AD1008CE159 /* AppDelegate.swift */; };
 		5CB2F63C27739AD1008CE159 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63B27739AD1008CE159 /* SceneDelegate.swift */; };
 		5CB2F63E27739AD1008CE159 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63D27739AD1008CE159 /* ViewController.swift */; };
@@ -15,9 +16,11 @@
 		5CB2F64627739AD3008CE159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB2F64427739AD3008CE159 /* LaunchScreen.storyboard */; };
 		5CB2F64F27739B3F008CE159 /* ConbineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F64E27739B3F008CE159 /* ConbineVC.swift */; };
 		5CB2F6522773DE0D008CE159 /* CombineCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F6512773DE0D008CE159 /* CombineCardView.swift */; };
+		5CB2F6912773E657008CE159 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F6902773E657008CE159 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C9722C8277420BB0034D489 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5CB2F63627739AD1008CE159 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB2F63927739AD1008CE159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB2F63B27739AD1008CE159 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		5CB2F64727739AD3008CE159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CB2F64E27739B3F008CE159 /* ConbineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConbineVC.swift; sourceTree = "<group>"; };
 		5CB2F6512773DE0D008CE159 /* CombineCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCardView.swift; sourceTree = "<group>"; };
+		5CB2F6902773E657008CE159 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		5CB2F63827739AD1008CE159 /* Tinder */ = {
 			isa = PBXGroup;
 			children = (
+				5CB2F68F2773E61E008CE159 /* lib */,
 				5CB2F6502773DDEF008CE159 /* View */,
 				5CB2F64D27739B0E008CE159 /* Controller */,
 				5CB2F63927739AD1008CE159 /* AppDelegate.swift */,
@@ -87,6 +92,15 @@
 				5CB2F6512773DE0D008CE159 /* CombineCardView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5CB2F68F2773E61E008CE159 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5CB2F6902773E657008CE159 /* UIView.swift */,
+				5C9722C8277420BB0034D489 /* UILabel.swift */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +176,10 @@
 			files = (
 				5CB2F63E27739AD1008CE159 /* ViewController.swift in Sources */,
 				5CB2F64F27739B3F008CE159 /* ConbineVC.swift in Sources */,
+				5C9722C9277420BB0034D489 /* UILabel.swift in Sources */,
 				5CB2F6522773DE0D008CE159 /* CombineCardView.swift in Sources */,
 				5CB2F63A27739AD1008CE159 /* AppDelegate.swift in Sources */,
+				5CB2F6912773E657008CE159 /* UIView.swift in Sources */,
 				5CB2F63C27739AD1008CE159 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
