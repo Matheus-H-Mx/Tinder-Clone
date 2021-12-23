@@ -9,6 +9,17 @@ import UIKit
 
 class CombineCardView: UIView {
     
+    var usuario: Usuario? {
+        didSet{
+            if let usuario = usuario {      // recebe dados do Usuario e faz atribuição dos dados
+                fotoImageView.image = UIImage(named: usuario.foto)
+                nomeLabel.text = usuario.nome
+                idadeLabel.text = String(usuario.idade)
+                fraseLabel.text = usuario.frase
+            }
+        }
+    }
+    
     var fotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pessoa-1")    // comando q inicia com a image
