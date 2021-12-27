@@ -33,7 +33,13 @@ class UsuarioService {
     
     ]
     
-    func buscaUsuarios () -> [Usuario] {
-        return self.usuarios
+    func buscaUsuarios (completion: @escaping ([Usuario]?,Error?) -> ()) {
+        completion(self.usuarios, nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)
+        {
+            completion(self.usuarios, nil)
+        }
+       
+        }
     }
-}
+

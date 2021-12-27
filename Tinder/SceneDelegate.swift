@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .white
         window?.rootViewController = UINavigationController(rootViewController: CombineVC()) //iniciando 
-        window?.makeKeyAndVisible() // metodo para iniciar a aplicação
+        window?.makeKeyAndVisible()                                                 // metodo para iniciar a aplicação
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
