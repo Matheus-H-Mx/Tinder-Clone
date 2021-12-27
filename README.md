@@ -1,2 +1,2 @@
 # Tinder-Clone
-Clone do Tinder feito apartir de videos da Udemy
+Clone do Tinder feito apartir de cursos da Udemy
