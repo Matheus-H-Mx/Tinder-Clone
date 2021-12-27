@@ -10,6 +10,8 @@
 		5C9722C9277420BB0034D489 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9722C8277420BB0034D489 /* UILabel.swift */; };
 		5C9722CC277429210034D489 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9722CB277429210034D489 /* Usuario.swift */; };
 		5C9722CF27742F5F0034D489 /* UsuarioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9722CE27742F5F0034D489 /* UsuarioService.swift */; };
+		5C9722D1277442C70034D489 /* UIimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9722D0277442C70034D489 /* UIimageView.swift */; };
+		5C98598A2775172000B31C06 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9859892775172000B31C06 /* UIButton.swift */; };
 		5CB2F63A27739AD1008CE159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63927739AD1008CE159 /* AppDelegate.swift */; };
 		5CB2F63C27739AD1008CE159 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63B27739AD1008CE159 /* SceneDelegate.swift */; };
 		5CB2F63E27739AD1008CE159 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F63D27739AD1008CE159 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 		5C9722C8277420BB0034D489 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		5C9722CB277429210034D489 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		5C9722CE27742F5F0034D489 /* UsuarioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioService.swift; sourceTree = "<group>"; };
+		5C9722D0277442C70034D489 /* UIimageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageView.swift; sourceTree = "<group>"; };
+		5C9859892775172000B31C06 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		5CB2F63627739AD1008CE159 /* Tinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB2F63927739AD1008CE159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CB2F63B27739AD1008CE159 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			children = (
 				5CB2F6902773E657008CE159 /* UIView.swift */,
 				5C9722C8277420BB0034D489 /* UILabel.swift */,
+				5C9722D0277442C70034D489 /* UIimageView.swift */,
+				5C9859892775172000B31C06 /* UIButton.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -202,7 +208,9 @@
 				5CB2F64F27739B3F008CE159 /* ConbineVC.swift in Sources */,
 				5C9722C9277420BB0034D489 /* UILabel.swift in Sources */,
 				5CB2F6522773DE0D008CE159 /* CombineCardView.swift in Sources */,
+				5C9722D1277442C70034D489 /* UIimageView.swift in Sources */,
 				5CB2F63A27739AD1008CE159 /* AppDelegate.swift in Sources */,
+				5C98598A2775172000B31C06 /* UIButton.swift in Sources */,
 				5CB2F6912773E657008CE159 /* UIView.swift in Sources */,
 				5CB2F63C27739AD1008CE159 /* SceneDelegate.swift in Sources */,
 			);
