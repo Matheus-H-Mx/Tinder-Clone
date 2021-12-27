@@ -42,7 +42,7 @@ class CombineVC: UIViewController {
     func buscaUsuarios () {
 //            self.usuarios = UsuarioService.shared.buscaUsuarios()
 //            self.adicionarCards()
-        UsuarioService.shared.buscaUsuarios { (usuarios, err) in
+        UsuarioService.shared.buscaUsuarios { (usuarios, err) in //referencia ao UsuarioService e chama função deErro
         if let usuarios = usuarios {
             DispatchQueue.main.async {
                self.usuarios = usuarios
