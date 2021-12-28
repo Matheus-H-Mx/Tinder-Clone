@@ -123,6 +123,12 @@ extension CombineVC {
   func verificarMatch (usuario: Usuario) {
     if usuario.match {
       print("Wooow")
+        
+        let matchVC = MatchVC()
+        matchVC.view.backgroundColor = UIColor.red
+        matchVC.modalPresentationStyle = .fullScreen
+        self.present(matchVC, animated: true, completion: nil)
+        
     }
   }
 }

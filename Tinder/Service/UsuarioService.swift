@@ -35,7 +35,7 @@ class UsuarioService {
     
     func buscaUsuarios (completion: @escaping ([Usuario]?,Error?) -> ()) {
         completion(self.usuarios, nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0)       // cria um atraso caso de erro 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0)       // cria um atraso caso de erro
         {
             completion(self.usuarios, nil)
         }
