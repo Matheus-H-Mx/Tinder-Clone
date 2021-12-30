@@ -10,8 +10,8 @@ import UIKit
 
 extension UIView {
   
-  func preencher (top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
-    translatesAutoresizingMaskIntoConstraints = false
+    func preencher (top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, trailing: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
+      translatesAutoresizingMaskIntoConstraints = false
     
     if let top = top {
       topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true

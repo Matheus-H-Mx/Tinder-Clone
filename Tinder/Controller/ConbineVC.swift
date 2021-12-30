@@ -139,6 +139,7 @@ extension CombineVC {
     func visualizarDetalhe (usuario: Usuario) {
         let detalheVC = DetalheVC()
         //detalheVC.view.backgroundColor = .red
+        detalheVC.usuario = usuario
         detalheVC.modalPresentationStyle = .fullScreen
         
         self.present(detalheVC,animated: true, completion: nil)
