@@ -102,6 +102,11 @@ extension CombineVC {
       card.center = view.center
       card.usuario = usuario
       card.tag = usuario.id
+        
+        card.callback = {(data) in
+            self.visualizarDetalhe(usuario: data)                   //callback para visualizar cards com essa funçao é possivel ver usuario
+            
+        }
       
       let gesture = UIPanGestureRecognizer()
       gesture.addTarget(self, action: #selector(handlerCard))
@@ -125,12 +130,19 @@ extension CombineVC {
       print("Wooow")
         
         let matchVC = MatchVC()
-        matchVC.view.backgroundColor = UIColor.red
+        matchVC.usuario = usuario
         matchVC.modalPresentationStyle = .fullScreen
         self.present(matchVC, animated: true, completion: nil)
         
     }
   }
+    func visualizarDetalhe (usuario: Usuario) {
+        let detalheVC = DetalheVC()
+        //detalheVC.view.backgroundColor = .red
+        detalheVC.modalPresentationStyle = .fullScreen
+        
+        self.present(detalheVC,animated: true, completion: nil)
+    }
 }
 
 extension CombineVC {

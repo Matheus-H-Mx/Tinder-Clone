@@ -7,7 +7,16 @@
 
 import UIKit
 
-class MatchVC: UIViewController {
+class MatchVC: UIViewController, UITextFieldDelegate {
+    
+    var usuario: Usuario? {
+        didSet{
+            if let usuario = usuario {
+                fotoImageView.image = UIImage(named: usuario.foto)
+                mensagemLabel.text = "\(usuario.nome) curtiu você tanbém !"                                 //add o nome do usuario ao match de cada pessoa apos o modal
+            }
+        }
+    }
     
     let fotoImageView: UIImageView = .fotoImageView(named: "pessoa-1")                                 //add foto apos modal
     let likeImageView: UIImageView = .fotoImageView(named: "icone-like")
@@ -52,11 +61,21 @@ class MatchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         view.addSubview(fotoImageView)
         fotoImageView.preencherSuperview()
         
-        mensagemLabel.text = "Ana curtiu você tanbem!"
+        let gradient = CAGradientLayer()
+        gradient.frame = view.frame
+        gradient.colors = [UIColor.clear.cgColor,UIColor.clear.cgColor, UIColor.black.cgColor]
+        
+        fotoImageView.layer.addSublayer(gradient)
+        mensagemTxt.delegate = self
         mensagemLabel.textAlignment = .center
+        
+        voltarButton.addTarget(self, action: #selector(voltarClique), for: .touchUpInside)
         
         likeImageView.translatesAutoresizingMaskIntoConstraints = false
         likeImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
@@ -71,6 +90,7 @@ class MatchVC: UIViewController {
             padding: .init(top: 0, left: 0, bottom: 0, right: 16)
         )
         
+        mensagemEnviarButton.addTarget(self, action: #selector(enviarMensagem), for: .touchUpInside)
         let stackView = UIStackView(arrangedSubviews: [likeImageView, mensagemLabel, mensagemTxt,mensagemTxt, voltarButton])
         stackView.axis = .vertical
         stackView.spacing = 16
@@ -83,5 +103,55 @@ class MatchVC: UIViewController {
             bottom: view.bottomAnchor,
             padding: .init(top: 0, left: 32, bottom: 46, right: 32)
             )
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.enviarMensagem()
+        return true
+    }
+    
+    @objc func voltarClique () {
+        self.dismiss(animated: true, completion: nil)                   //voltar a matchs disponiveis apos clique
+    }
+    
+    @objc func enviarMensagem () {
+        if let mensagem = self.mensagemTxt.text {                                 //envia mensagem apos o superLike
+            
+            print(mensagem)
+        }
+    }
+    
+    @objc func keyboardShow (notification: NSNotification) {
+      if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+        if let duracao = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+          
+          UIView.animate(withDuration: duracao) {
+            
+            self.view.frame = CGRect(
+              x: UIScreen.main.bounds.origin.x,
+              y: UIScreen.main.bounds.origin.y,
+              width: UIScreen.main.bounds.width,
+              height: UIScreen.main.bounds.height - keyboardSize.height
+            )
+            self.view.layoutIfNeeded()
+            
+          }
+            
+        }
+      }
+    }
+    
+    @objc func keyboardHide (notification: NSNotification){
+        if let duracao = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double {
+            UIView.animate(withDuration: duracao)   {
+                self.view.frame = UIScreen.main.bounds
+                self.view.layoutIfNeeded()
+            
+            }
+        }
     }
 }
