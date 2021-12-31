@@ -94,14 +94,17 @@ class DetalheVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = UIScreen.main .bounds.width
-        var height: CGFloat = 100
-        
-        let cell = DetalhePerfilCell(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        cell.usuario = self.usuario
-        cell.layoutIfNeeded()
-        
-        let estimativaTamanho = cell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))
-        height = estimativaTamanho.height
+        var height: CGFloat = UIScreen.main.bounds.width * 0.66     //ocupa 66% da tela
+      
+        if indexPath.item == 0 {
+            
+            let cell = DetalhePerfilCell(frame: CGRect(x: 0, y: 0, width: width, height: height))
+            cell.usuario = self.usuario
+            cell.layoutIfNeeded()
+            
+            let estimativaTamanho = cell.systemLayoutSizeFitting(CGSize(width: width, height: 1000))
+            height = estimativaTamanho.height
+        }
         
         return .init(width: width, height: height)                                          //itens ocupando tela toda e 3 itens
         }
