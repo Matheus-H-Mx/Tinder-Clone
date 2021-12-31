@@ -42,6 +42,7 @@ class DetalheVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     let cellId = "cellId"
     let headerId = "headerId"
     let perfilId = "perfilId"
+    let fotosId = "fotosId"
     init () {
         super.init(collectionViewLayout: HeaderLayout())
     }
@@ -58,10 +59,11 @@ class DetalheVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         collectionView.register(DetalheHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView.register(DetalhePerfilCell.self, forCellWithReuseIdentifier: perfilId)
+        collectionView.register(DetalheFotosCell.self, forCellWithReuseIdentifier: fotosId)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1                                                                                        //celulas retornadas
+        return 2                                                                                       //celulas retornadas
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -78,6 +80,12 @@ class DetalheVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
 //        cell.backgroundColor = .blue
 //        return cell
+        
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: perfilId, for: indexPath) as! DetalhePerfilCell
+            cell.usuario = self.usuario
+            return cell
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: perfilId, for: indexPath) as! DetalhePerfilCell
         cell.usuario = self.usuario
