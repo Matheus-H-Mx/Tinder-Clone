@@ -8,7 +8,7 @@
 import UIKit
 class SlideFotoCell: UICollectionViewCell {
     
-    var fotoImageView: UIImageView = .fotoImageView()
+    var fotoImageView: UIImageView = .fotoImageView()           //var transformada em UIImageView
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -16,7 +16,7 @@ class SlideFotoCell: UICollectionViewCell {
         layer.cornerRadius = 8
         clipsToBounds = true
         
-        addSubview(fotoImageView)
+        addSubview(fotoImageView)               //retorna a função a imagem apresentada 
         fotoImageView.preencherSuperview()
     }
     

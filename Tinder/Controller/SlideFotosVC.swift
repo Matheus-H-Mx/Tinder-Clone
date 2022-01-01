@@ -6,6 +6,23 @@
 import UIKit
 
 class SlideFotosVC: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+ let cellId = "cellId"
+
+    let fotos: [String] = [
+    "pessoa-1",
+    "pessoa-2",
+    "pessoa-3",
+    "pessoa-4",
+    "pessoa-5",
+    "pessoa-6",
+    "pessoa-7",
+    "pessoa-8",
+    "pessoa-9",
+    "pessoa-10"
+    ]
+    
+    
+    
     init (){
         let layout = UICollectionViewFlowLayout ()
         layout.scrollDirection = .horizontal

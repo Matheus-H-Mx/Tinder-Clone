@@ -15,8 +15,7 @@ class DetalheFotosCell: UICollectionViewCell{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundColor = .blue 
+      
         
         descricaoLabel.text = "Fotos recentes Instagram"
         

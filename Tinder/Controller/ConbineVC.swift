@@ -127,20 +127,27 @@ extension CombineVC {
   }
   func verificarMatch (usuario: Usuario) {
     if usuario.match {
-      print("Wooow")
-        
         let matchVC = MatchVC()
         matchVC.usuario = usuario
         matchVC.modalPresentationStyle = .fullScreen
         self.present(matchVC, animated: true, completion: nil)
-        
     }
   }
+    
     func visualizarDetalhe (usuario: Usuario) {
         let detalheVC = DetalheVC()
         //detalheVC.view.backgroundColor = .red
         detalheVC.usuario = usuario
         detalheVC.modalPresentationStyle = .fullScreen
+        
+        detalheVC.callback = { (usuario,Acao) in DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            if Acao == .deslike{
+                self.deslikeClique()
+            }else {
+                self.likeClique()
+            }
+        }
+   }
         
         self.present(detalheVC,animated: true, completion: nil)
     }
