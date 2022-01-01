@@ -38,6 +38,7 @@ class Loading: UIView {
         
         self.animacao()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not implementted")
     }

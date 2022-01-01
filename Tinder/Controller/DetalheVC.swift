@@ -173,7 +173,6 @@ class DetalheVC: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }
     
     @objc func deslikeClique () {
-        print("deslikeClique")
         self.callback?(self.usuario, Acao.deslike)
         self.voltarClique()
     }

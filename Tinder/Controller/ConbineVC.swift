@@ -55,8 +55,8 @@ class CombineVC: UIViewController {
 extension CombineVC {
   func adicionarHeader () {
     
-    let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-    let top: CGFloat = window?.safeAreaInsets.top ?? 44
+      let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+      let top: CGFloat = window?.safeAreaInsets.top ?? 44
     
     let stackView = UIStackView(arrangedSubviews: [perfilButton, logoButtom, chatButtom])
     stackView.distribution = .equalCentering

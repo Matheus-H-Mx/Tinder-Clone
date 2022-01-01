@@ -59,59 +59,61 @@ class MatchVC: UIViewController, UITextFieldDelegate {
     }()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        view.addSubview(fotoImageView)
-        fotoImageView.preencherSuperview()
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = view.frame
-        gradient.colors = [UIColor.clear.cgColor,UIColor.clear.cgColor, UIColor.black.cgColor]
-        
-        fotoImageView.layer.addSublayer(gradient)
-        mensagemTxt.delegate = self
-        mensagemLabel.textAlignment = .center
-        
-        voltarButton.addTarget(self, action: #selector(voltarClique), for: .touchUpInside)
-        
-        likeImageView.translatesAutoresizingMaskIntoConstraints = false
-        likeImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        likeImageView.contentMode = .scaleAspectFit
-        
-        mensagemTxt.addSubview(mensagemEnviarButton)
-        mensagemEnviarButton.preencher(
-            top: mensagemTxt.topAnchor,
-            leading: nil,
-            trailing: mensagemTxt.trailingAnchor,
-            bottom: mensagemTxt.bottomAnchor,
-            padding: .init(top: 0, left: 0, bottom: 0, right: 16)
-        )
-        
-        mensagemEnviarButton.addTarget(self, action: #selector(enviarMensagem), for: .touchUpInside)
-        let stackView = UIStackView(arrangedSubviews: [likeImageView, mensagemLabel, mensagemTxt,mensagemTxt, voltarButton])
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        
-        view.addSubview(stackView)
-        stackView.preencher(
-            top: nil,
-            leading: view.leadingAnchor,
-            trailing: view.trailingAnchor,
-            bottom: view.bottomAnchor,
-            padding: .init(top: 0, left: 32, bottom: 46, right: 32)
-            )
+      super.viewDidLoad()
+      
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+      
+      view.addSubview(fotoImageView)
+      fotoImageView.preencherSuperview()
+      
+      let gradient = CAGradientLayer()
+      gradient.frame = view.frame
+      gradient.colors = [UIColor.clear.cgColor, UIColor.clear.cgColor, UIColor.black.cgColor]
+      
+      fotoImageView.layer.addSublayer(gradient)
+      
+      mensagemTxt.delegate = self
+      mensagemLabel.textAlignment = .center
+      
+      voltarButton.addTarget(self, action: #selector(voltarClique), for: .touchUpInside)
+      
+      likeImageView.translatesAutoresizingMaskIntoConstraints = false
+      likeImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+      likeImageView.contentMode = .scaleAspectFit
+      
+      mensagemTxt.addSubview(mensagemEnviarButton)
+      mensagemEnviarButton.preencher(
+        top: mensagemTxt.topAnchor,
+        leading: nil,
+        trailing: mensagemTxt.trailingAnchor,
+        bottom: mensagemTxt.bottomAnchor,
+        padding: .init(top: 0, left: 0, bottom: 0, right: 16)
+      )
+      mensagemEnviarButton.addTarget(self, action: #selector(enviarMensagem), for: .touchUpInside)
+      
+      let stackView = UIStackView(arrangedSubviews: [likeImageView, mensagemLabel, mensagemTxt, voltarButton])
+      stackView.axis = .vertical
+      stackView.spacing = 16
+      
+      view.addSubview(stackView)
+      stackView.preencher(
+        top: nil,
+        leading: view.leadingAnchor,
+        trailing: view.trailingAnchor,
+        bottom: view.bottomAnchor,
+        padding: .init(top: 0, left: 32, bottom: 46, right: 32)
+      )
+      
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+      view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.enviarMensagem()
-        return true
+      self.enviarMensagem()
+      return true
     }
     
     @objc func voltarClique () {
@@ -120,17 +122,14 @@ class MatchVC: UIViewController, UITextFieldDelegate {
     
     @objc func enviarMensagem () {
         if let mensagem = self.mensagemTxt.text {                                 //envia mensagem apos o superLike
-            
             print(mensagem)
         }
     }
-    
     @objc func keyboardShow (notification: NSNotification) {
       if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
         if let duracao = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
           
           UIView.animate(withDuration: duracao) {
-            
             self.view.frame = CGRect(
               x: UIScreen.main.bounds.origin.x,
               y: UIScreen.main.bounds.origin.y,
@@ -138,20 +137,19 @@ class MatchVC: UIViewController, UITextFieldDelegate {
               height: UIScreen.main.bounds.height - keyboardSize.height
             )
             self.view.layoutIfNeeded()
-            
           }
-            
+          
         }
       }
     }
     
-    @objc func keyboardHide (notification: NSNotification){
-        if let duracao = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? Double {
-            UIView.animate(withDuration: duracao)   {
-                self.view.frame = UIScreen.main.bounds
-                self.view.layoutIfNeeded()
-            
-            }
+    @objc func keyboardHide (notification: NSNotification) {
+      if let duracao = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
+        UIView.animate(withDuration: duracao) {
+          self.view.frame = UIScreen.main.bounds
+          self.view.layoutIfNeeded()
         }
+      }
     }
-}
+  }
+

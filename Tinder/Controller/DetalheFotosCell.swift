@@ -31,15 +31,18 @@ class DetalheFotosCell: UICollectionViewCell{
                 bottom: 0,
                 right: 20)
         )
+        
         addSubview(slideFotosVC.view)
         slideFotosVC.view.preencher(
-            top: descricaoLabel.bottomAnchor,
-            leading: descricaoLabel.leadingAnchor,
-            trailing: trailingAnchor,
-            bottom: bottomAnchor )
-    }
-    
-    required init(coder:  NSCoder) {
+          top: descricaoLabel.bottomAnchor,
+          leading: leadingAnchor,
+          trailing: trailingAnchor,
+          bottom: bottomAnchor
+        )
+      }
+      
+      required init?(coder: NSCoder) {
         fatalError()
+      }
+      
     }
-}
