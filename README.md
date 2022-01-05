@@ -1,7 +1,9 @@
 # Tinder-Clone
 ## Clone do Tinder feito apartir de cursos da Udemy
 
-<p align="center">
+<p align="left">
+    <img windth="270"  src="Tinder/Assets.xcassets/ezgif.com-gif-maker.gif">
+<p align="right">
     <img windth="270"  src="Tinder/Assets.xcassets/ezgif.com-gif-maker.gif">
 
 ### Gif do app 
@@ -10,3 +12,5 @@
     - UIkit para fazer as telas 
     - Animações 
     - MVVM 
+    - Foundation
+    - ViewControllers
