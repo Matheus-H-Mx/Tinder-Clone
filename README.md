@@ -13,3 +13,4 @@
     - MVVM 
     - Foundation
     - ViewControllers
+    - IOS Simulator
